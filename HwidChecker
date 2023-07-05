@@ -1,0 +1,19 @@
+runcode(function()
+	task.spawn(function()
+		local HWIDTABLE = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZloppyS/Hwids/main/Hwids", true))()
+
+		local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
+		local foundHWID = false
+
+		for i, v in pairs(HWIDTABLE) do
+			if v == HWID then
+				foundHWID = true
+				break
+			end
+		end
+
+		if not foundHWID then
+			game.Players.LocalPlayer:Kick("No bitches? Try getting a job you motherfucker")
+		end
+	end)
+end)
